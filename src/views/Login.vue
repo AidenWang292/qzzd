@@ -6,7 +6,8 @@
         <el-input v-model="formData.username"></el-input>
       </el-form-item>
       <el-form-item label="密码">
-        <el-input type="password" v-model="formData.password"></el-input>
+        <!-- 添加键盘回车登陆功能 -->
+        <el-input @keyup.enter='login' type="password" v-model="formData.password"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button class="btn" type="primary" @click="login">登录</el-button>
@@ -49,6 +50,8 @@ export default {
               }
             } = response;
             sessionStorage.setItem("token", token);
+            // 使用this.$router.push()方法跳转到首页
+            this.$router.push('/');
           } else {
             console.log("qwww");
             this.$message.error(msg);
