@@ -6,9 +6,19 @@ import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/style.css'
+import moment from 'moment'
+import MyAxios from '@/plugins/MyAxios'
+// import axios from 'axios'
 Vue.config.productionTip = false
 // 注册插件
 Vue.use(ElementUI);
+// 
+Vue.use(MyAxios)
+// 注册全局过滤器
+Vue.filter('formatDate',(ot,ft)=>{
+  return moment(ot).format(ft);
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

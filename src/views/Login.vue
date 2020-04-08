@@ -16,7 +16,8 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+// import axios from "axios";
+// import MyAxios from '@/plugins/MyAxios'
 export default {
   data() {
     return {
@@ -29,7 +30,9 @@ export default {
   },
   methods: {
     async login() {
-   var response = await axios.post('http://localhost:8888/api/private/v1/login',this.formData);
+   var response = await this.$http.post('login',this.formData);
+  //     var response1 = await axios.get('http://localhost:8888/api/private/v1/users?pagenum=1&pagesize=10');
+  //  console.log(response1)
       let {
             data: {
               meta: { msg, status }
