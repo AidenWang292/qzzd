@@ -13,8 +13,9 @@ axios.interceptors.request.use(function (config) {
     // Do something before request is sent
     // console.log(config)
     if(config.url.toLocaleLowerCase() !=='login'){
-      const token=  sessionStorage.getItem('token')
-        config.headers.Authorization=token
+      const token=  sessionStorage.getItem('token');
+      console.log(token)
+        config.headers.Authorization=token;
     }
     return config;
   }, function (error) {
