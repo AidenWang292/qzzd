@@ -56,11 +56,11 @@ export default {
             // 使用this.$router.push()方法跳转到首页
             this.$router.push('/');
           } else {
-            console.log("qwww");
+            // console.log("qwww");
             this.$message.error(msg);
           }
        
-    }
+    },
   }
 };
 </script>
